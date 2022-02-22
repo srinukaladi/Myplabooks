@@ -1,0 +1,9 @@
+---
+- name: remove a directory
+  hosts: all
+  become: true
+  tasks:  
+  - name: remove a directory
+    file:
+       path: /home/ansibleadmin/demo
+       state: absent

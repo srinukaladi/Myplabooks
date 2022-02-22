@@ -1,0 +1,29 @@
+---
+- name: installing a Package
+  hosts: all
+  become: true
+  tasks:
+  - name: installing a httpd
+    yum:
+       name: httpd
+       state: latest
+    when: ansible_os_family  ==  "RedHat" 
+
+  - name: Start service httpd
+    service:
+       name: httpd
+       state: started
+    when: ansible_os_family  ==  "RedHat"
+
+  - name: install apache2 package
+    apt:
+       name: apache2
+       state: present
+    when: ansible_os_family   ==  "Debian"
+
+  - name: Start service apache2
+    service:
+       name: apache2
+       state: started
+    when: ansible_os_family  ==  "Debian"
+

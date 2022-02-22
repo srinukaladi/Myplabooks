@@ -1,0 +1,9 @@
+---
+- name: create a directory
+  hosts: all
+  become: true
+  tasks:  
+  - name: create a directory
+    file:
+       path: /home/ansibleadmin/demo
+       state: directory

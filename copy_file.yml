@@ -1,0 +1,9 @@
+---
+- name: copy a file
+  hosts: all
+  become: truei
+  tasks:  
+  - name: copy  a file
+    copy:
+       src: /home/ansibleadmin/index.html
+       dest: /home/ansibleadmin
